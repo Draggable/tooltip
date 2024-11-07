@@ -1,0 +1,109 @@
+{
+  "name": "@draggable/library-template",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/library-template.es.min.js",
+  "type": "module",
+  "private": true,
+  "files": [
+    "dist/"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings --test src/**/*.test.{ts,js}",
+    "test:watch": "npm run test -- --watch",
+    "lint": "biome lint src/js/demo.ts",
+    "format": "biome format --write src/",
+    "start": "npm run dev",
+    "semantic-release": "semantic-release",
+    "dev": "vite",
+    "preview": "vite preview",
+    "build:lib": "vite build --config vite.config.lib.ts",
+    "watch:lib": "vite build --config vite.config.lib.ts --watch",
+    "build": "vite build --config vite.config.dev.ts",
+    "prebuild": "npm run build:lib",
+    "prepare": "lefthook install",
+    "postmerge": "lefthook install"
+  },
+  "repository": {
+    "url": "https://github.com/Draggable/library-template",
+    "type": "git"
+  },
+  "keywords": [
+    "library-template"
+  ],
+  "author": "Draggable https://draggable.io",
+  "contributors": [
+    {
+      "name": "Kevin Chappell",
+      "email": "kevin@chappell.dev",
+      "url": "https://kevin-chappell.com"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Draggable/library-template/issues"
+  },
+  "homepage": "https://github.com/Draggable/library-template",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^12.0.1",
+    "lefthook": "^1.7.22",
+    "lint-staged": "^15.2.10",
+    "semantic-release": "^24.1.3",
+    "vite": "^5.4.9",
+    "vite-plugin-banner": "^0.8.0",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-html": "^3.2.2"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,js}": [
+      "biome lint",
+      "biome format",
+      "git add"
+    ]
+  },
+  "release": {
+    "branch": "master",
+    "verifyConditions": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ],
+    "prepare": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "type-enum": [
+        2,
+        "always",
+        [
+          "build",
+          "chore",
+          "ci",
+          "docs",
+          "feat",
+          "fix",
+          "perf",
+          "refactor",
+          "revert",
+          "style",
+          "test"
+        ]
+      ]
+    }
+  }
+}
