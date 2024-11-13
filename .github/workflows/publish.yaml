@@ -3,7 +3,7 @@ name: Publish
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -24,6 +24,14 @@ jobs:
         run: npm test
       - name: Build
         run: npm run build
-      - name: Publish
+        - name: Publish
         if: success()
         run: npx semantic-release
+      - run: npm run build
+        if: success()
+      - name: Deploy - https://draggable.github.io/formeo/
+        if: success()
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: ./dist

@@ -12,9 +12,27 @@
 </head>
 
 <body>
-  <div class="site-wrap">
-    <header id="demo-header"></header>
-    <section id="main_content"></section>
+  <div class="container">
+    <button class="tooltip-trigger"
+      data-tooltip="<strong>Hello!</strong><br>This is a tooltip with <em>HTML</em> content.">
+      Hover me (center)
+    </button>
+
+    <button class="tooltip-trigger" style="align-self: flex-start;"
+      data-tooltip="This tooltip will adjust its position when near the top">
+      Hover me (top)
+    </button>
+
+    <button class="tooltip-trigger" style="align-self: flex-end;"
+      data-tooltip="This tooltip will only show on click" data-tooltip-type="click">
+      Click Me
+    </button>
+
+    <button class="tooltip-trigger" style="align-self: flex-end;"
+      data-tooltip="This tooltip will adjust when near the bottom">
+      Hover me (bottom)
+    </button>
+
   </div>
 
 </body>

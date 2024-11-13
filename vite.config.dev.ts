@@ -1,12 +1,23 @@
-import { defineConfig, UserConfigExport } from 'vite'
-import { resolve } from 'path'
+import { defineConfig } from 'vite'
+import type { UserConfigExport } from 'vite'
+import { resolve } from 'node:path'
 import { createHtmlPlugin } from 'vite-plugin-html'
-import { isProduction, pkgName, shortName, version } from './env'
+import { patchCssModules } from 'vite-css-modules'
+import { isProduction, pkgName, shortName, version } from './env.ts'
 
 const config: UserConfigExport = defineConfig({
   root: 'src',
   base: isProduction ? `/${shortName}/` : '/',
+  css: {
+    modules: {
+      localsConvention: 'camelCase',
+      generateScopedName: isProduction ? '[hash:base64:8]' : '[local]_[hash:base64:5]',
+    },
+  },
   build: {
+    target: 'esnext',
+    cssMinify: true,
+    cssCodeSplit: false,
     rollupOptions: {
       input: {
         demo: resolve(__dirname, 'src/index.html'),
@@ -16,7 +27,8 @@ const config: UserConfigExport = defineConfig({
         chunkFileNames: '[name].min.js',
       },
     },
-    outDir: 'dist',
+    outDir: '../dist',
+    emptyOutDir: false,
     minify: 'terser',
     terserOptions: {
       compress: {
@@ -36,6 +48,9 @@ const config: UserConfigExport = defineConfig({
         },
       },
     }),
+    // patchCssModules({
+    //   generateSourceTypes: true,
+    // }),
   ],
   resolve: {
     alias: {
