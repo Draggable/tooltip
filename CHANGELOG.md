@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Draggable/tooltip/compare/v1.0.0...v1.0.1) (2024-11-13)
+
+
+### Bug Fixes
+
+* typo in package.json ([55184df](https://github.com/Draggable/tooltip/commit/55184df3994627d4cddb20ddc7457d1923d5ade3))
+
 # 1.0.0 (2024-11-13)
 
 
