@@ -18,12 +18,12 @@ describe('SmartTooltip', () => {
 
   test('should initialize with default options', () => {
     const instance = new SmartTooltip()
-    assert.equal(instance['options'].triggerName, 'tooltip')
+    assert.equal(instance.triggerName, 'data-tooltip')
   })
 
   test('should initialize with custom options', () => {
     const instance = new SmartTooltip({ triggerName: 'custom-tooltip' })
-    assert.equal(instance['options'].triggerName, 'custom-tooltip')
+    assert.equal(instance.triggerName, 'data-custom-tooltip')
   })
 
   test('should show tooltip on hover', () => {
@@ -72,7 +72,18 @@ describe('SmartTooltip', () => {
 
   test('should fit tooltip in viewport', () => {
     const instance = new SmartTooltip()
-    assert.ok(instance['fitsInViewport'](10, 10, 100, 100))
-    assert.ok(!instance['fitsInViewport'](-10, -10, 100, 100))
+    const rect: DOMRect = {
+      x: 400,
+      y: 400,
+      width: 250,
+      height: 50,
+      top: 400,
+      right: 400,
+      bottom: 400,
+      left: 400,
+      toJSON: () => ({}),
+    }
+    assert.ok(instance['fitsInViewport']({ name: 'top', x: 100, y: 100 }, rect))
+    assert.ok(!instance['fitsInViewport']({ name: 'top', x: -100, y: -100 }, rect))
   })
 })

@@ -3,8 +3,7 @@ import { defineConfig } from 'vite'
 import type { UserConfigExport } from 'vite'
 import banner from 'vite-plugin-banner'
 import compression from 'vite-plugin-compression'
-import { patchCssModules } from 'vite-css-modules'
-
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 import dts from 'vite-plugin-dts'
 
 import { bannerTemplate, camelCaseName, isProduction, shortName } from './env'
@@ -12,6 +11,7 @@ import { bannerTemplate, camelCaseName, isProduction, shortName } from './env'
 const config: UserConfigExport = defineConfig({
   root: './',
   plugins: [
+    cssInjectedByJsPlugin(),
     banner(bannerTemplate),
     compression({
       algorithm: 'brotliCompress',
@@ -20,14 +20,12 @@ const config: UserConfigExport = defineConfig({
     dts({
       insertTypesEntry: true,
     }),
-    patchCssModules({
-      generateSourceTypes: true,
-    }),
   ],
   css: {
     modules: {
       localsConvention: 'camelCase',
-      generateScopedName: isProduction ? '[hash:base64:8]' : '[local]_[hash:base64:5]',
+      scopeBehaviour: 'local',
+      generateScopedName: isProduction ? '[hash:base64:8]' : 'st_[local]_[hash:base64:5]',
     },
   },
   build: {
@@ -55,13 +53,7 @@ const config: UserConfigExport = defineConfig({
       output: {
         banner: bannerTemplate,
         exports: 'named',
-        // intro: 'import "./src/css/tooltip.module.css";',
-        assetFileNames: assetInfo => {
-          if (assetInfo.name === 'style.css') {
-            return `${shortName}.css`
-          }
-          return `${assetInfo.name}`
-        },
+        inlineDynamicImports: true,
       },
     },
     sourcemap: isProduction ? false : 'inline',
