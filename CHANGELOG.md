@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Draggable/tooltip/compare/v1.0.1...v1.1.0) (2024-11-13)
+
+
+### Features
+
+* inject css from js ([cf5eab8](https://github.com/Draggable/tooltip/commit/cf5eab810cbd63c64a3d1a021bccf1e246e5aa21))
+
 ## [1.0.1](https://github.com/Draggable/tooltip/compare/v1.0.0...v1.0.1) (2024-11-13)
 
 
