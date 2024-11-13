@@ -1,7 +1,7 @@
 
 /**
 @draggable/tooltip - https://github.com/Draggable/tooltip
-Version: 1.0.0
+Version: 1.0.1
 Author: Draggable https://draggable.io
 */
 
