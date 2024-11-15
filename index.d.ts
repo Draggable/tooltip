@@ -71,6 +71,7 @@ export declare class SmartTooltip {
     private hide;
     destroy(): void;
 }
+export declare const Tooltip: typeof SmartTooltip;
 declare global {
     interface Window {
         SmartTooltip: typeof SmartTooltip;
