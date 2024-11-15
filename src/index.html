@@ -13,21 +13,48 @@
 
 <body>
   <div class="container">
-    <button data-tooltip="<strong>Hello!</strong><br>This is a tooltip with <em>HTML</em> content.">
-      Hover me (center)
+    <button class="top-left"
+      data-tooltip="Tooltip will position itself on bottom right when the top left is obstructed">
+      Hover (bottom-right)
     </button>
 
-    <button style="align-self: flex-start;" data-tooltip="This tooltip will adjust its position when near the top">
-      Hover me (top)
+    <button class="top" data-tooltip="Tooltip will position itself on bottom when the top is obstructed">
+      Hover (bottom-center)
     </button>
 
-    <button style="align-self: flex-end;" data-tooltip="This tooltip will only show on click" data-tooltip-type="click">
+    <button class="top-right"
+      data-tooltip="Tooltip will position itself on bottom left when the top right is obstructed">
+      Hover (bottom-left)
+    </button>
+
+    <button class="right" data-tooltip="Tooltip will position itself on the left when the right is obstructed">
+      Hover (right-middle)
+    </button>
+
+    <button class="left" data-tooltip="Tooltip will position itself on the right when the left is obstructed">
+      Hover (left-middle)
+    </button>
+
+    <button class="bottom-left"
+      data-tooltip="Tooltip will position itself on top left when the bottom right is obstructed">
+      Hover (bottom-right)
+    </button>
+
+    <button class="bottom" data-tooltip="Tooltip will position itself on the top when the bottom is obstructed">
+      Hover (bottom-center)
+    </button>
+
+    <button class="bottom-right"
+      data-tooltip="Tooltip will position itself on top right when the top left is obstructed">
+      Hover (bottom-left)
+    </button>
+
+    <button class="center"
+      data-tooltip="<strong>Hello!</strong><br>This is a tooltip with <em>HTML</em> content and it only appears when clicked."
+      data-tooltip-type="click">
       Click Me
     </button>
 
-    <button style="align-self: flex-end;" data-tooltip="This tooltip will adjust when near the bottom">
-      Hover me (bottom)
-    </button>
 
   </div>
 

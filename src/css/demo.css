@@ -1,16 +1,13 @@
 body {
   margin: 0;
   min-height: 100vh;
-  display: grid;
-  place-items: center;
   font-family: system-ui, sans-serif;
 }
 
 .container {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  padding: 2rem;
+  position: relative;
+  padding: 1rem;
+  height: calc(100vh - 2rem);
 }
 
 button {
@@ -20,4 +17,60 @@ button {
   border: none;
   border-radius: 0.25rem;
   cursor: pointer;
+  position: absolute;
+}
+
+.center {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.left {
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.top-left {
+  left: 0;
+  top: 0;
+  transform: translate(0, 0);
+}
+
+.top {
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+}
+
+.top-right {
+  right: 0;
+  top: 0;
+  transform: translate(0, 0);
+}
+
+.right {
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.bottom-right {
+  right: 0;
+  bottom: 0;
+  transform: translate(0, 0);
+}
+
+.bottom {
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0);
+}
+
+.bottom-left {
+  left: 0;
+  bottom: 0;
+  transform: translate(0, 0);
 }

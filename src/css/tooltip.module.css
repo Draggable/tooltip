@@ -9,11 +9,15 @@
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.2s;
+  pointer-events: none;
+  left: 0;
+  top: 0;
 }
 
 .tooltip.visible {
   visibility: visible;
   opacity: 1;
+  pointer-events: all;
 }
 
 .tooltip::before {
@@ -50,4 +54,34 @@
   left: -12px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.tooltip[data-position="top-left"]::before {
+  border-top-color: #1f2937;
+  bottom: -12px;
+  left: 12px;
+  transform: none;
+}
+
+.tooltip[data-position="top-right"]::before {
+  border-top-color: #1f2937;
+  bottom: -12px;
+  right: 12px;
+  left: auto;
+  transform: none;
+}
+
+.tooltip[data-position="bottom-left"]::before {
+  border-bottom-color: #1f2937;
+  top: -12px;
+  left: 12px;
+  transform: none;
+}
+
+.tooltip[data-position="bottom-right"]::before {
+  border-bottom-color: #1f2937;
+  top: -12px;
+  right: 12px;
+  left: auto;
+  transform: none;
 }
