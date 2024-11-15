@@ -2,14 +2,14 @@
   "name": "@draggable/tooltip",
   "version": "1.1.0",
   "description": "",
-  "main": "dist/tooltip.cjs.js",
-  "module": "dist/tooltip.es.js",
-  "unpkg": "dist/tooltip.umd.js",
+  "main": "dist/tooltip.cjs.min.js",
+  "module": "dist/tooltip.es.min.js",
+  "unpkg": "dist/tooltip.umd.min.js",
   "exports": {
     ".": {
-      "import": "./dist/tooltip.es.js",
-      "require": "./dist/tooltip.cjs.js",
-      "default": "./dist/tooltip.umd.js"
+      "import": "./dist/tooltip.es.min.js",
+      "require": "./dist/tooltip.cjs.min.js",
+      "default": "./dist/tooltip.umd.min.js"
     }
   },
   "type": "module",
