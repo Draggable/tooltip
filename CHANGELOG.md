@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Draggable/tooltip/compare/v1.1.0...v1.1.1) (2024-11-15)
+
+
+### Bug Fixes
+
+* export definitions ([902c541](https://github.com/Draggable/tooltip/commit/902c5410d70267cdec11a74146f959ba985dc88d))
+
 # [1.1.0](https://github.com/Draggable/tooltip/compare/v1.0.1...v1.1.0) (2024-11-13)
 
 
