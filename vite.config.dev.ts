@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import type { UserConfigExport } from 'vite'
 import { resolve } from 'node:path'
 import { createHtmlPlugin } from 'vite-plugin-html'
-import { patchCssModules } from 'vite-css-modules'
 import { isProduction, pkgName, shortName, version } from './env.ts'
 
 const config: UserConfigExport = defineConfig({
@@ -48,9 +47,6 @@ const config: UserConfigExport = defineConfig({
         },
       },
     }),
-    // patchCssModules({
-    //   generateSourceTypes: true,
-    // }),
   ],
   resolve: {
     alias: {

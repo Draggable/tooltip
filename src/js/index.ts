@@ -253,6 +253,8 @@ export class SmartTooltip {
   }
 }
 
+export const Tooltip = SmartTooltip
+
 declare global {
   interface Window {
     SmartTooltip: typeof SmartTooltip
