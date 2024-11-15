@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/Draggable/tooltip/compare/v1.2.0...v1.2.1) (2024-11-15)
+
+
+### Bug Fixes
+
+* readme missing important info ([403ba4c](https://github.com/Draggable/tooltip/commit/403ba4c0930e1444a1aec9eba51c1a4e966380f2))
+
 # [1.2.0](https://github.com/Draggable/tooltip/compare/v1.1.1...v1.2.0) (2024-11-15)
 
 
