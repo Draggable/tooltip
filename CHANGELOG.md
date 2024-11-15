@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/Draggable/tooltip/compare/v1.1.1...v1.2.0) (2024-11-15)
+
+
+### Features
+
+* auto placement when obstructed by another element ([1c1a789](https://github.com/Draggable/tooltip/commit/1c1a789dc265196e5ecbf19306ad5ec11f2e49d0))
+
 ## [1.1.1](https://github.com/Draggable/tooltip/compare/v1.1.0...v1.1.1) (2024-11-15)
 
 
