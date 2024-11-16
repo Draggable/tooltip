@@ -33,9 +33,23 @@ describe('SmartTooltip', () => {
     assert.equal(tooltipElement?.textContent, 'Test tooltip')
   })
 
+  test('should show tooltip on touchstart', () => {
+    trigger.dispatchEvent(new MouseEvent('touchstart', { bubbles: true }))
+    const tooltipElement = document.querySelector('div[class*="tooltip"]')
+    assert.ok(tooltipElement?.classList.contains('visible'))
+    assert.equal(tooltipElement?.textContent, 'Test tooltip')
+  })
+
   test('should hide tooltip on mouseout', () => {
     trigger.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }))
     trigger.dispatchEvent(new MouseEvent('mouseout', { bubbles: true }))
+    const tooltipElement = document.querySelector('div[class*="tooltip"]')
+    assert.ok(!tooltipElement?.classList.contains('visible'))
+  })
+
+  test('should hide tooltip on touchend', () => {
+    trigger.dispatchEvent(new MouseEvent('touchstart', { bubbles: true }))
+    trigger.dispatchEvent(new MouseEvent('touchend', { bubbles: true }))
     const tooltipElement = document.querySelector('div[class*="tooltip"]')
     assert.ok(!tooltipElement?.classList.contains('visible'))
   })
