@@ -1,3 +1,11 @@
+## [1.2.2](https://github.com/Draggable/tooltip/compare/v1.2.1...v1.2.2) (2024-11-16)
+
+
+### Bug Fixes
+
+* touch and mouse events ([a5cf039](https://github.com/Draggable/tooltip/commit/a5cf03980bc8a616b8b47c4960983e8dafe20f7a))
+* use pointer events for touch devices ([3240ce2](https://github.com/Draggable/tooltip/commit/3240ce2d532d2ec575972e188ce1e3b6ebb54847))
+
 ## [1.2.1](https://github.com/Draggable/tooltip/compare/v1.2.0...v1.2.1) (2024-11-15)
 
 
