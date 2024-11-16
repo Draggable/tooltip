@@ -66,8 +66,8 @@ export class SmartTooltip {
   }
 
   private setupEventListeners() {
-    document.addEventListener('mouseover', this.handleMouseOver)
-    document.addEventListener('mouseout', this.handleMouseOut)
+    document.addEventListener('pointerenter', this.handleMouseOver)
+    document.addEventListener('pointerleave', this.handleMouseOut)
     document.addEventListener('click', this.handleClick)
     window.addEventListener('resize', this.handleResize)
     window.addEventListener('scroll', this.handleScroll, true)
@@ -244,8 +244,8 @@ export class SmartTooltip {
   }
 
   public destroy(): void {
-    document.removeEventListener('mouseover', this.handleMouseOver)
-    document.removeEventListener('mouseout', this.handleMouseOut)
+    document.removeEventListener('pointerenter', this.handleMouseOver)
+    document.removeEventListener('pointerleave', this.handleMouseOut)
     document.removeEventListener('click', this.handleClick)
     window.removeEventListener('resize', this.handleResize)
     window.removeEventListener('scroll', this.handleScroll, true)
