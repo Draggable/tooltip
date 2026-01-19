@@ -55,14 +55,23 @@ export class SmartTooltip {
   private readonly tooltip: HTMLDivElement
   private activeTriggerType: string | null = null
   private readonly spacing = 12
+  private static instance: SmartTooltip | null = null
 
   constructor(options: SmartTooltipOptions = defaultOptions) {
+    // If an instance already exists, destroy it first
+    if (SmartTooltip.instance) {
+      SmartTooltip.instance.destroy()
+    }
+
     this.triggerName = `data-${options.triggerName}`
     this.tooltip = document.createElement('div')
     this.tooltip.className = `d-tooltip ${styles.tooltip}`
     document.body.appendChild(this.tooltip)
 
     this.setupEventListeners()
+
+    // Store this instance
+    SmartTooltip.instance = this
   }
 
   private setupEventListeners() {
@@ -71,8 +80,8 @@ export class SmartTooltip {
     document.addEventListener('touchstart', this.handleMouseOver)
     document.addEventListener('touchend', this.handleMouseOut)
     document.addEventListener('click', this.handleClick)
-    window.addEventListener('resize', this.handleResize)
-    window.addEventListener('scroll', this.handleScroll, true)
+    globalThis.addEventListener('resize', this.handleResize)
+    globalThis.addEventListener('scroll', this.handleScroll, true)
   }
 
   private readonly handleClick = (e: Event): void => {
@@ -198,8 +207,8 @@ export class SmartTooltip {
     const inViewport =
       pos.x >= 0 &&
       pos.y >= 0 &&
-      pos.x + tooltipRect.width <= window.innerWidth &&
-      pos.y + tooltipRect.height <= window.innerHeight
+      pos.x + tooltipRect.width <= globalThis.innerWidth &&
+      pos.y + tooltipRect.height <= globalThis.innerHeight
 
     if (!inViewport) return false
 
@@ -251,9 +260,14 @@ export class SmartTooltip {
     document.removeEventListener('touchstart', this.handleMouseOver)
     document.removeEventListener('touchend', this.handleMouseOut)
     document.removeEventListener('click', this.handleClick)
-    window.removeEventListener('resize', this.handleResize)
-    window.removeEventListener('scroll', this.handleScroll, true)
+    globalThis.removeEventListener('resize', this.handleResize)
+    globalThis.removeEventListener('scroll', this.handleScroll, true)
     this.tooltip.remove()
+
+    // Clear the static instance if this is it
+    if (SmartTooltip.instance === this) {
+      SmartTooltip.instance = null
+    }
   }
 }
 
@@ -265,8 +279,8 @@ declare global {
   }
 }
 
-if (window !== undefined) {
-  window.SmartTooltip = SmartTooltip
+if (globalThis !== undefined) {
+  ;(globalThis as typeof globalThis & { SmartTooltip: typeof SmartTooltip }).SmartTooltip = SmartTooltip
 }
 
 export default SmartTooltip
