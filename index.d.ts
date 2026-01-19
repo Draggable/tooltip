@@ -42,6 +42,7 @@ export declare class SmartTooltip {
     private readonly tooltip;
     private activeTriggerType;
     private readonly spacing;
+    private static instance;
     constructor(options?: SmartTooltipOptions);
     private setupEventListeners;
     private readonly handleClick;
