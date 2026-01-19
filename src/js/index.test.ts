@@ -6,6 +6,7 @@ const MouseEvent = window.MouseEvent
 
 describe('SmartTooltip', () => {
   let trigger: HTMLElement
+  let instance: SmartTooltip
 
   test('beforeEach', () => {
     // Setup DOM elements
@@ -13,17 +14,18 @@ describe('SmartTooltip', () => {
     trigger = document.createElement('div')
     trigger.setAttribute('data-tooltip', 'Test tooltip')
     document.body.appendChild(trigger)
-    new SmartTooltip()
+    instance = new SmartTooltip()
   })
 
   test('should initialize with default options', () => {
-    const instance = new SmartTooltip()
     assert.equal(instance.triggerName, 'data-tooltip')
   })
 
   test('should initialize with custom options', () => {
-    const instance = new SmartTooltip({ triggerName: 'custom-tooltip' })
-    assert.equal(instance.triggerName, 'data-custom-tooltip')
+    const customInstance = new SmartTooltip({ triggerName: 'custom-tooltip' })
+    assert.equal(customInstance.triggerName, 'data-custom-tooltip')
+    // Restore the default instance for other tests
+    instance = new SmartTooltip()
   })
 
   test('should show tooltip on hover', () => {
@@ -85,7 +87,6 @@ describe('SmartTooltip', () => {
   })
 
   test('should fit tooltip in viewport', () => {
-    const instance = new SmartTooltip()
     const rect: DOMRect = {
       x: 400,
       y: 400,

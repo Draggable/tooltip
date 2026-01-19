@@ -19,4 +19,12 @@ globalThis.window = window
 globalThis.document = window.document
 globalThis.navigator = window.navigator
 
+// Expose window properties directly on globalThis for code that uses globalThis directly
+// JSDOM doesn't set these properly, so we need to set reasonable defaults
+globalThis.innerWidth = 1024
+globalThis.innerHeight = 768
+globalThis.addEventListener = window.addEventListener.bind(window)
+globalThis.removeEventListener = window.removeEventListener.bind(window)
+globalThis.getComputedStyle = window.getComputedStyle.bind(window)
+
 snapshot.setResolveSnapshotPath(testFile => join(dirname(testFile), '__snapshots__', `${basename(testFile)}.snapshot`))
