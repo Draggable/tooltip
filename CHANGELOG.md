@@ -1,3 +1,12 @@
+## [1.2.3](https://github.com/Draggable/tooltip/compare/v1.2.2...v1.2.3) (2026-01-19)
+
+
+### Bug Fixes
+
+* accidental multiple tooltip instances ([ec1d70e](https://github.com/Draggable/tooltip/commit/ec1d70e9aad3c16e46fa7a7bfd21851d61cea6ea))
+* accidental multiple tooltip instances ([1932064](https://github.com/Draggable/tooltip/commit/19320641abaca19b1a2b593cc8b681e52f03de4b))
+* accidental multiple tooltip instances ([0b1b9ee](https://github.com/Draggable/tooltip/commit/0b1b9eeb2b20acc93c1d4bb0f04c1d7902d4fd35))
+
 ## [1.2.2](https://github.com/Draggable/tooltip/compare/v1.2.1...v1.2.2) (2024-11-16)
 
 
