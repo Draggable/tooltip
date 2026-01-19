@@ -15,8 +15,8 @@ window.Element.prototype.animate = () => ({
   removeEventListener: () => {},
 })
 
-global.window = window
-global.document = window.document
-global.navigator = window.navigator
+globalThis.window = window
+globalThis.document = window.document
+globalThis.navigator = window.navigator
 
 snapshot.setResolveSnapshotPath(testFile => join(dirname(testFile), '__snapshots__', `${basename(testFile)}.snapshot`))
