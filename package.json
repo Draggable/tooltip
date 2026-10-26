@@ -1,6 +1,6 @@
 {
   "name": "@draggable/tooltip",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "",
   "main": "dist/tooltip.cjs.min.js",
   "module": "dist/tooltip.es.min.js",

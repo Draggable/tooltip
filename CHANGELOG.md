@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/Draggable/tooltip/compare/v1.2.3...v1.2.4) (2026-10-26)
+
+
+### Bug Fixes
+
+* upgrade vulnerable direct and transitive dependencies ([#1](https://github.com/Draggable/tooltip/issues/1)) ([74b8214](https://github.com/Draggable/tooltip/commit/74b8214e8905b2dd7f8fa0a48ab42b5811775e96))
+
 ## [1.2.3](https://github.com/Draggable/tooltip/compare/v1.2.2...v1.2.3) (2026-01-19)
 
 
