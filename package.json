@@ -65,6 +65,7 @@
     "jsdom": "^25.0.1",
     "lefthook": "^1.7.22",
     "lint-staged": "^15.2.10",
+    "npm": "file:./vendor/npm-11.21.1-undici-6.29.1.tgz",
     "semantic-release": "^25.0.0",
     "vite": "^6.4.3",
     "vite-plugin-banner": "^0.8.0",
@@ -118,5 +119,8 @@
   },
   "dependencies": {
     "vite-plugin-css-injected-by-js": "^3.5.2"
+  },
+  "overrides": {
+    "npm": "$npm"
   }
 }
