@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/Draggable/tooltip/compare/v1.2.4...v1.2.5) (2026-10-29)
+
+
+### Bug Fixes
+
+* normalize repository url in package.json ([#4](https://github.com/Draggable/tooltip/issues/4)) ([5704041](https://github.com/Draggable/tooltip/commit/570404122f9d23c5d106bd4d45ccc2e0d40e22b4))
+
 ## [1.2.4](https://github.com/Draggable/tooltip/compare/v1.2.3...v1.2.4) (2026-10-26)
 
 
