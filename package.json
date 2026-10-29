@@ -36,7 +36,7 @@
     "postmerge": "lefthook install"
   },
   "repository": {
-    "url": "https://github.com/Draggable/tooltip",
+    "url": "git+https://github.com/Draggable/tooltip.git",
     "type": "git"
   },
   "keywords": [
