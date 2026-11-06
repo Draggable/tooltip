@@ -1,3 +1,10 @@
+## [1.2.7](https://github.com/Draggable/tooltip/compare/v1.2.6...v1.2.7) (2026-11-06)
+
+
+### Bug Fixes
+
+* upgrade vite-plugin-dts to drop vulnerable minimatch ([#6](https://github.com/Draggable/tooltip/issues/6)) ([2cba4b2](https://github.com/Draggable/tooltip/commit/2cba4b2a20d8d93d5a991cdce5e8440a6854a5a2))
+
 ## [1.2.6](https://github.com/Draggable/tooltip/compare/v1.2.5...v1.2.6) (2026-11-06)
 
 
