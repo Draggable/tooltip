@@ -1,3 +1,10 @@
+## [1.2.6](https://github.com/Draggable/tooltip/compare/v1.2.5...v1.2.6) (2026-11-06)
+
+
+### Bug Fixes
+
+* bump nested npm to 11.21.2 for undici 6.29.1 ([#5](https://github.com/Draggable/tooltip/issues/5)) ([1547521](https://github.com/Draggable/tooltip/commit/15475213489725c6cd007677e1ec2dc58600d908))
+
 ## [1.2.5](https://github.com/Draggable/tooltip/compare/v1.2.4...v1.2.5) (2026-10-29)
 
 
