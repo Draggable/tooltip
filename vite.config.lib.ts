@@ -19,7 +19,7 @@ const config: UserConfigExport = defineConfig({
     }),
     dts({
       insertTypesEntry: true,
-      // vite-plugin-dts 4.5 includes repo-root ambient files, so tsc emits
+      // The dts plugin includes repo-root ambient files, so tsc emits
       // dist/src/js/*.d.ts. Pin the declaration root so published types stay
       // at dist/index.d.ts, which tooltip.es.min.d.ts re-exports.
       include: ['src/js/**/*.ts'],
