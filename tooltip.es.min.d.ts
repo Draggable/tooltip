@@ -1,6 +1,6 @@
-export * from './index'
+export * from './index.js'
 export {}
-import Tooltip from './index'
+import Tooltip from './index.js'
 export default Tooltip
-export * from './index'
+export * from './index.js'
 export {}
